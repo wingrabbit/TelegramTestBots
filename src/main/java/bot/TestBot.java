@@ -48,12 +48,12 @@ public class TestBot extends TelegramLongPollingBot{
 
     @Override
     public String getBotUsername() {
-        return "";
+        return Util.getPropertyValue("name");
     }
 
     @Override
     public String getBotToken() {
-        return "";
+        return Util.getPropertyValue("token");
     }
 
 }

@@ -1,5 +1,7 @@
 package bot;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,17 +37,24 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
+import org.junit.Test;
 
-public class Test {
+public class Testing {
 
 	public static void main(String[] args)
 	{
 		//getBoobs();
 		
-		getPhotoArchive();
+		//getPhotoArchive();
 		
-		//getPikabu();
 	}
+	
+	@Test
+	public void testConfig()
+	{
+		assertEquals(Util.getPropertyValue("test"), "test");
+	}
+	
 	
 	private static String getUrlSource(String url) throws IOException {
         URL yahoo = new URL(url);
