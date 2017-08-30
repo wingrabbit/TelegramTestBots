@@ -46,6 +46,7 @@ public class Testing {
 		//getBoobs();
 		
 		//getPhotoArchive();
+		System.out.println(Util.getPhotoArchive());
 		
 	}
 	
@@ -94,39 +95,6 @@ public class Testing {
 				
 			}
 		}
-	}
-	
-	private static void getPhotoArchive()
-	{
-		List<String> galleries = new ArrayList<String>();
-		String pageCode = "";
-		try{
-			pageCode = getUrlSource("http://www.kindgirls.com/photo-archive/?s=04-2017");
-			
-		}
-		catch (Exception e) {
-			pageCode = "failed";
-			e.printStackTrace();
-		}		
-		String regExp = "href=\"/gallery/(.*?)\"";
-		Pattern pattern = Pattern.compile(regExp, Pattern.CASE_INSENSITIVE);
-		Matcher matcher = pattern.matcher(pageCode);
-		if(!matcher.find())
-			System.out.println("Failed :(");
-		while (matcher.find()) {
-			System.out.println(matcher.group(1));
-			galleries.add(matcher.group(1));
-		}
-		String galleryLink = "http://www.kindgirls.com/gallery/" + galleries.get(new Random().nextInt(galleries.size()));
-		try{
-			pageCode = getUrlSource(galleryLink);
-			
-		}
-		catch (Exception e) {
-			pageCode = "failed";
-			e.printStackTrace();
-		}		
-		System.out.println(pageCode);	
 	}
 	
 	

@@ -30,9 +30,16 @@ public class TestBot extends TelegramLongPollingBot{
 	        SendPhoto photo = new SendPhoto();
 	        photo.setChatId(chatId);
 	        photo.setCaption("Photo");
-	        List<String> pics = Util.getListOfBoobs(new Random().nextInt(551)+1);
-	        String picNum = pics.get(new Random().nextInt(pics.size()));
-	        String pictureURL = "http://media.oboobs.ru/boobs_preview/"+picNum+".jpg";
+	        String pictureURL = "";
+	        if(messageText.equals("1"))
+	        {
+		        List<String> pics = Util.getListOfBoobs(new Random().nextInt(551)+1);
+		        String picNum = pics.get(new Random().nextInt(pics.size()));
+		        pictureURL = "http://media.oboobs.ru/boobs_preview/"+picNum+".jpg";
+	        }
+	        else {
+				pictureURL = Util.getPhotoArchive();
+			}
 	        photo.setPhoto(pictureURL);
 
 	        Util.log(userFirstName, userLastName, Long.toString(userId), username, messageText, pictureURL);
