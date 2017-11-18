@@ -37,16 +37,26 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import bot.db.dao.MessageManager;
+import bot.db.model.Message;
+
+
 public class Testing {
+	
+	final static Logger logger = Logger.getLogger(Testing.class);
 
 	public static void main(String[] args)
 	{
 		//getBoobs();
 		
 		//getPhotoArchive();
-		System.out.println(Util.getPhotoArchive());
+		//System.out.println(Util.getPhotoArchive());
+		
+		//List<Message> messages = new MessageManager().listMessages();
+		//System.out.println(messages.get(0).getLastName());
 		
 	}
 	
