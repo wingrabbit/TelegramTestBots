@@ -1,17 +1,20 @@
 package bot.db;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 	 
-    private static final SessionFactory sessionFactory = buildSessionFactory();
+    private static final Session session = getHibernateSession();
  
-    @SuppressWarnings("deprecation")
-	private static SessionFactory buildSessionFactory() {
+	private static Session getHibernateSession() {
         try {
             // Create the SessionFactory from hibernate.cfg.xml
-            return new Configuration().configure().buildSessionFactory();
+            //return new Configuration().configure().buildSessionFactory();
+        	final SessionFactory sf = new Configuration().configure().buildSessionFactory();//new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        	final Session session = sf.openSession();
+            return session;
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
@@ -20,8 +23,8 @@ public class HibernateUtil {
         }
     }
  
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
+    public static Session getSession() {
+        return session;
     }
  
 }

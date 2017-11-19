@@ -41,7 +41,9 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import bot.db.dao.MessageManager;
+import bot.db.dao.UserManager;
 import bot.db.model.Message;
+import bot.db.model.User;
 
 
 public class Testing {
@@ -55,8 +57,13 @@ public class Testing {
 		//getPhotoArchive();
 		//System.out.println(Util.getPhotoArchive());
 		
-		//List<Message> messages = new MessageManager().listMessages();
-		//System.out.println(messages.get(0).getLastName());
+		MessageManager messageManager = new MessageManager();
+		UserManager userManager = new UserManager();
+		List<User> users = userManager.getEntireTable();
+		List<Message> messages = messageManager.getEntireTable();//new MessageManager().listMessages();
+		System.out.println(messages.get(0).getUserMessage());
+		System.out.println(users.size());
+		//messageManager.addValue(new Message(1, 1, "test", "test", 1));
 		
 	}
 	

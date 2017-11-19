@@ -3,16 +3,29 @@ package bot.db.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import bot.db.dao.abstraction.DBObject;
+
 @Entity
 @Table(name="message")
-public class Message{
+public class Message extends DBObject{
 	
+	public Message(){}
+	
+	public Message(long chatId, long userId, String userMessage, String reply, int messageType) {
+		this.chatId = chatId;
+		this.userId = userId;
+		this.userMessage = userMessage;
+		this.reply = reply;
+		this.messageType = messageType;
+	}
+
 	@Id
 	@Column(name="message_id")
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="chat_id")
@@ -20,15 +33,6 @@ public class Message{
 	
 	@Column(name="user_id")
 	private long userId;
-	
-	@Column(name="username")
-	private String username;
-	
-	@Column(name="user_first_name")
-	private String firstName;
-	
-	@Column(name="user_last_name")
-	private String lastName;
 	
 	@Column(name="user_message")
 	private String userMessage;
@@ -63,29 +67,7 @@ public class Message{
 		this.userId = userId;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+	
 
 	public String getUserMessage() {
 		return userMessage;
