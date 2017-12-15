@@ -1,4 +1,4 @@
-package bot.photosources;
+package ru.epshtein.telegram.bot.photosources;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import bot.photosources.photo.PhotoInformation;
+import ru.epshtein.telegram.bot.photosources.photo.PhotoInformation;
 
 public abstract class PhotoManager {
 

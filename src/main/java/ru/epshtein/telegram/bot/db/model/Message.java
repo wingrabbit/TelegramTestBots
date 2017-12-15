@@ -1,4 +1,4 @@
-package bot.db.model;
+package ru.epshtein.telegram.bot.db.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import bot.db.dao.abstraction.DBObject;
+import ru.epshtein.telegram.bot.db.dao.abstraction.DBObject;
 
 @Entity
 @Table(name="message")

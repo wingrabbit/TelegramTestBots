@@ -1,4 +1,4 @@
-package bot;
+package ru.epshtein.telegram.bot;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

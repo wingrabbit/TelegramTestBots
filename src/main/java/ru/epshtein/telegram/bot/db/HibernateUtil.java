@@ -1,4 +1,4 @@
-package bot.db;
+package ru.epshtein.telegram.bot.db;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

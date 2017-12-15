@@ -1,12 +1,12 @@
-package bot.db.dao;
+package ru.epshtein.telegram.bot.db.dao;
 
 import java.util.List;
 
 import org.hibernate.Session;
 
-import bot.db.HibernateUtil;
-import bot.db.dao.abstraction.DAOManager;
-import bot.db.model.User;
+import ru.epshtein.telegram.bot.db.HibernateUtil;
+import ru.epshtein.telegram.bot.db.dao.abstraction.DAOManager;
+import ru.epshtein.telegram.bot.db.model.User;
 
 public class UserManager extends DAOManager {
 

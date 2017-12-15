@@ -40,10 +40,11 @@ import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import bot.db.dao.MessageManager;
-import bot.db.dao.UserManager;
-import bot.db.model.Message;
-import bot.db.model.User;
+import ru.epshtein.telegram.bot.Util;
+import ru.epshtein.telegram.bot.db.dao.MessageManager;
+import ru.epshtein.telegram.bot.db.dao.UserManager;
+import ru.epshtein.telegram.bot.db.model.Message;
+import ru.epshtein.telegram.bot.db.model.User;
 
 
 public class Testing {

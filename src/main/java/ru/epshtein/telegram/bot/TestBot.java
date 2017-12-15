@@ -1,4 +1,4 @@
-package bot;
+package ru.epshtein.telegram.bot;
 
 import java.util.List;
 import java.util.Random;
@@ -9,10 +9,10 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-import bot.db.dao.MessageManager;
-import bot.db.dao.UserManager;
-import bot.db.model.Message;
-import bot.db.model.User;
+import ru.epshtein.telegram.bot.db.dao.MessageManager;
+import ru.epshtein.telegram.bot.db.dao.UserManager;
+import ru.epshtein.telegram.bot.db.model.Message;
+import ru.epshtein.telegram.bot.db.model.User;
 
 public class TestBot extends TelegramLongPollingBot{
 	

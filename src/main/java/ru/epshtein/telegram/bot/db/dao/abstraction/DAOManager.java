@@ -1,10 +1,10 @@
-package bot.db.dao.abstraction;
+package ru.epshtein.telegram.bot.db.dao.abstraction;
 
 import java.util.List;
 
 import org.hibernate.Session;
 
-import bot.db.HibernateUtil;
+import ru.epshtein.telegram.bot.db.HibernateUtil;
 
 public abstract class DAOManager {
 	

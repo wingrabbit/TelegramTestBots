@@ -1,4 +1,4 @@
-package bot.photosources.photo;
+package ru.epshtein.telegram.bot.photosources.photo;
 
 public abstract class PhotoInformation {
 	
